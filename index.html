@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinesh Jillala - Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Core Theme */
+    body {
+      scroll-behavior: smooth;
+      background-color: #000000;
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
+    }
+    .bg-dark { background-color: #121212; }
+    .bg-darker { background-color: #000000; }
+    .text-accent { color: #ffffff; }
+    .border-accent { border-color: #00f7ff; }
+    .shadow-glow { box-shadow: 0 0 15px rgba(0, 247, 255, 0.3); }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+    .slide-in {
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 1.2s ease-in-out;
+    }
+    .scale-in {
+      transform: scale(0.95);
+      opacity: 0;
+      transition: all 0.8s ease-in-out;
+    }
+    .show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+    }
+    .glow-button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      background-color: #1f1f1f;
+      color: #ffffff;
+      border: 1px solid #00f7ff;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .glow-button:hover {
+      background-color: #333333;
+      box-shadow: 0 0 25px rgba(0, 247, 255, 0.5);
+      animation: none;
+    }
+    .glow-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+    .glow-button:hover::before {
+      left: 100%;
+    }
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px rgba(0, 247, 255, 0.2); }
+      50% { box-shadow: 0 0 20px rgba(0, 247, 255, 0.4); }
+      100% { box-shadow: 0 0 10px rgba(0, 247, 255, 0.2); }
+    }
+
+    /* Typography and Layout */
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    section {
+      position: relative;
+      overflow: hidden;
+    }
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #00f7ff, transparent);
+      opacity: 0.2;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="bg-darker text-white p-4 fixed w-full top-0 shadow-glow z-20">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-accent tracking-tight">Dinesh Jillala</h1>
+      <ul class="flex space-x-8 text-sm uppercase tracking-wider">
+        <li><a href="#hero" class="nav-link hover:text-accent transition-colors duration-300">Home</a></li>
+        <li><a href="#about" class="nav-link hover:text-accent transition-colors duration-300">About</a></li>
+        <li><a href="#skills" class="nav-link hover:text-accent transition-colors duration-300">Skills</a></li>
+        <li><a href="#projects" class="nav-link hover:text-accent transition-colors duration-300">Projects</a></li>
+        <li><a href="#education" class="nav-link hover:text-accent transition-colors duration-300">Education</a></li>
+        <li><a href="#connect" class="nav-link hover:text-accent transition-colors duration-300">Connect</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 text-white">
+    <div class="container mx-auto text-center px-4 scale-in">
+      <div class="image-container mx-auto mb-8 float">
+        <img src="myimage.jpeg" alt="Dinesh Jillala" class="rounded-full w-36 h-36 mx-auto border-2 border-accent shadow-glow">
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold fade-in mb-4">Dinesh Jillala</h1>
+      <p class="text-xl md:text-2xl fade-in text-accent mb-6">Cyber Security Enthusiast & Full Stack Developer</p>
+      <p class="text-lg max-w-3xl mx-auto fade-in mb-8">
+        Crafting secure, innovative, and user-centric web applications to tackle real-world challenges with a passion for technology.
+      </p>
+      <div class="button-group mt-6 space-x-4 fade-in">
+        <a href="mailto:dineshjillala@gmail.com" class="inline-block px-8 py-3 rounded-full font-semibold glow-button">📧 Email Me</a>
+        <a href="myresume1.pdf" download class="inline-block px-8 py-3 rounded-full font-semibold glow-button">⬇️ Download Resume</a>
+      </div>
+      <div class="social-icons mt-8 space-x-6 fade-in">
+        <a href="https://github.com/Dinesh12966" title="GitHub" class="text-2xl hover:text-accent hover-scale"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/dinesh_jillala?igsh=MWllcTVvbWU1bGM5Yg==" title="Instagram" class="text-2xl hover:text-accent hover-scale"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/dinesh-jillala-b0a180297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn" class="text-2xl hover:text-accent hover-scale"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-dark scale-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-10 slide-in text-accent">About Me</h2>
+      <p class="text-lg max-w-3xl mx-auto slide-in leading-relaxed">
+        I'm Dinesh, a dedicated cyber security student and web developer. I thrive on transforming complex challenges into elegant, secure digital solutions. Currently pursuing a B.Tech in Computer Science & Engineering (Cyber Security) at a JNTUH-affiliated college, I blend technical expertise with a passion for innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-darker scale-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-10 slide-in text-accent">Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 slide-in">
+        <div class="bg-dark p-6 rounded-lg shadow-md hover-scale shadow-glow">
+          <h3 class="text-xl font-semibold text-accent">Cyber Security</h3>
+          <p>Network Security, Ethical Hacking, Penetration Testing</p>
+        </div>
+        <div class="bg-dark p-6 rounded-lg shadow-md hover-scale shadow-glow">
+          <h3 class="text-xl font-semibold text-accent">Full Stack Development</h3>
+          <p>HTML, CSS, JavaScript, Node.js, React</p>
+        </div>
+        <div class="bg-dark p-6 rounded-lg shadow-md hover-scale shadow-glow">
+          <h3 class="text-xl font-semibold text-accent">Tools & Technologies</h3>
+          <p>Git, Docker, AWS, Linux</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-dark scale-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-10 slide-in text-accent">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 slide-in">
+        <div class="bg-darker p-6 rounded-lg shadow-md hover-scale shadow-glow">
+          <h3 class="text-xl font-semibold text-accent">Secure Web App</h3>
+          <p>A full-stack web application with enhanced security features, built using React and Node.js.</p>
+          <a href="#" class="text-accent hover:underline glow-button inline-block mt-2 px-4 py-2 rounded">View Project</a>
+        </div>
+        <div class="bg-darker p-6 rounded-lg shadow-md hover-scale shadow-glow">
+          <h3 class="text-xl font-semibold text-accent">Network Scanner</h3>
+          <p>A Python-based tool for scanning network vulnerabilities.</p>
+          <a href="#" class="text-accent hover:underline glow-button inline-block mt-2 px-4 py-2 rounded">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-20 bg-darker scale-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-10 slide-in text-accent">Education</h2>
+      <ul class="space-y-6 slide-in">
+        <li class="bg-dark p-6 rounded-lg shadow-md shadow-glow">
+          <strong class="text-lg text-accent">B.Tech in Computer Science & Engineering (Cyber Security)</strong><br>
+          JNTUH Affiliated College, 2022 - 2026
+        </li>
+        <li class="bg-dark p-6 rounded-lg shadow-md shadow-glow">
+          <strong class="text-lg text-accent">Intermediate (MPC)</strong><br>
+          Sri Chaitanya Junior College, 2020 - 2022
+        </li>
+        <li class="bg-dark p-6 rounded-lg shadow-md shadow-glow">
+          <strong class="text-lg text-accent">SSC (10th Grade)</strong><br>
+          Himani Model High School, 2019 - 2020
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section id="connect" class="py-20 bg-dark scale-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-10 slide-in text-accent">Connect With Me</h2>
+      <p class="text-lg max-w-3xl mx-auto slide-in leading-relaxed mb-8">
+        I'm excited to collaborate, discuss projects, or answer any questions. Feel free to reach out via email or connect with me on social media!
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 slide-in">
+        <div class="bg-darker p-6 rounded-lg shadow-md hover-scale shadow-glow">
+          <h3 class="text-xl font-semibold text-accent mb-2">Email</h3>
+          <p class="mb-4">Send me a message directly:</p>
+          <a href="mailto:dineshjillala@gmail.com" class="text-accent hover:underline glow-button inline-block px-6 py-3 rounded">📧 dineshjillala@gmail.com</a>
+        </div>
+        <div class="bg-darker p-6 rounded-lg shadow-md hover-scale shadow-glow">
+          <h3 class="text-xl font-semibold text-accent mb-2">Social Media</h3>
+          <p class="mb-4">Follow or connect with me:</p>
+          <div class="flex space-x-6">
+            <a href="https://github.com/Dinesh12966" title="GitHub" class="text-2xl hover:text-accent hover-scale"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/dinesh_jillala?igsh=MWllcTVvbWU1bGM5Yg==" title="Instagram" class="text-2xl hover:text-accent hover-scale"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/dinesh-jillala-b0a180297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn" class="text-2xl hover:text-accent hover-scale"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-darker text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>© 2025 Dinesh Jillala. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll with animation trigger
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        // Reset animation classes
+        targetSection.classList.remove('show', 'scale-in');
+        void targetSection.offsetWidth; // Trigger reflow
+        
+        // Scroll to section
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // Re-apply animation
+        setTimeout(() => {
+          targetSection.classList.add('scale-in', 'show');
+        }, 100);
+      });
+    });
+
+    // Intersection Observer for initial animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const hiddenElements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
+    hiddenElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
